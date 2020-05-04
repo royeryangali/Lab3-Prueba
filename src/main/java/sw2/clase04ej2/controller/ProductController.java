@@ -44,11 +44,11 @@ public class ProductController {
         model.addAttribute("listaProveedores", supplierRepository.findAll());
         return "product/newFrm";
     }
-    @GetMapping("/old3")
+    @GetMapping("/viejo3")
     public String productoAntiguoTercero() {
         return "/product/newFrm";
     }
-    @GetMapping("/oldSegundo")
+    @GetMapping("/viejo3")
     public String productoAntiguoSegund1o() {
         return "/product/newFrm";
     }
