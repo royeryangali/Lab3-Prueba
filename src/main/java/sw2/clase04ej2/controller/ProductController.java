@@ -41,8 +41,13 @@ public class ProductController {
     @GetMapping("/new")
     public String nuevoProductoFrm(Model model) {
         model.addAttribute("listaCategorias", categoryRepository.findAll());
-        model.addAttribute("listaProveedores",supplierRepository.findAll());
+        model.addAttribute("listaProveedores", supplierRepository.findAll());
         return "product/newFrm";
+    }
+
+    @GetMapping("/old")
+    public String productoAntiguo() {
+        return "/product/newFrm";
     }
 
     @PostMapping("/save")
@@ -57,7 +62,7 @@ public class ProductController {
     }
 
     @GetMapping("/edit")
-    public String editarTransportista(Model model,@RequestParam("id") int id) {
+    public String editarTransportista(Model model, @RequestParam("id") int id) {
 
         Optional<Product> optProduct = productRepository.findById(id);
 
@@ -65,7 +70,7 @@ public class ProductController {
             Product product = optProduct.get();
             model.addAttribute("product", product);
             model.addAttribute("listaCategorias", categoryRepository.findAll());
-            model.addAttribute("listaProveedores",supplierRepository.findAll());
+            model.addAttribute("listaProveedores", supplierRepository.findAll());
             return "product/editFrm";
         } else {
             return "redirect:/product";
@@ -81,7 +86,7 @@ public class ProductController {
 
         if (optProduct.isPresent()) {
             productRepository.deleteById(id);
-            attr.addFlashAttribute("msg","Producto borrado exitosamente");
+            attr.addFlashAttribute("msg", "Producto borrado exitosamente");
         }
         return "redirect:/product";
 
