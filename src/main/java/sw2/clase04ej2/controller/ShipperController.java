@@ -29,7 +29,14 @@ public class ShipperController {
 
         return "shipper/list";
     }
-
+    @GetMapping("/old3")
+    public String productoAntiguoTercero() {
+        return "/product/newFrm";
+    }
+    @GetMapping("/oldSegundo")
+    public String productoAntiguoSegund1o() {
+        return "/product/newFrm";
+    }
     @GetMapping("/new")
     public String nuevoTransportistaFrm() {
         return "shipper/newFrm";
