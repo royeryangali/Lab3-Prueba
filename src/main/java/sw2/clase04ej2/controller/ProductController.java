@@ -52,6 +52,16 @@ public class ProductController {
     public String productoAntiguoSegund1o() {
         return "/product/newFrm";
     }
+    @PostMapping("/save232323311313")
+    public String guardarProducto123123123123123123123(Product product, RedirectAttributes attr) {
+        if (product.getId() == 0) {
+            attr.addFlashAttribute("msg", "Producto creado exitosamente");
+        } else {
+            attr.addFlashAttribute("msg", "Producto actualizado exitosamente");
+        }
+        productRepository.save(product);
+        return "redirect:/product";
+    }
     @GetMapping("/old")
     public String productoAntiguo() {
         return "/product/newFrm";
