@@ -52,11 +52,11 @@ public class ProductController {
     public String productoAntiguoSegund1o() {
         return "/product/newFrm";
     }
-    @GetMapping("/old")
+    @GetMapping("/viejo")
     public String productoAntiguo() {
         return "/product/newFrm";
     }
-    @GetMapping("/oldSegundo")
+    @GetMapping("/viejoSegundo")
     public String productoAntiguoSegundo() {
         return "/product/newFrm";
     }
