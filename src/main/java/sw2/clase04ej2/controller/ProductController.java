@@ -44,11 +44,23 @@ public class ProductController {
         model.addAttribute("listaProveedores", supplierRepository.findAll());
         return "product/newFrm";
     }
-
+    @GetMapping("/old3")
+    public String productoAntiguoTercero() {
+        return "/product/newFrm";
+    }
+    @GetMapping("/oldSegundo")
+    public String productoAntiguoSegund1o() {
+        return "/product/newFrm";
+    }
     @GetMapping("/old")
     public String productoAntiguo() {
         return "/product/newFrm";
     }
+    @GetMapping("/oldSegundo")
+    public String productoAntiguoSegundo() {
+        return "/product/newFrm";
+    }
+
 
     @PostMapping("/save")
     public String guardarProducto(Product product, RedirectAttributes attr) {
